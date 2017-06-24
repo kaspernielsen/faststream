@@ -1,3 +1,3 @@
-org.cakeframework.test.random.view.collectionview
-org.cakeframework.test.random.view.mapview
-org.cakeframework.test.random.view.multimapview
+io.faststream.sisyphus.view.collectionview
+io.faststream.sisyphus.view.mapview
+io.faststream.sisyphus.view.multimapview

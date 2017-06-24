@@ -18,12 +18,11 @@ package io.faststream.internal;
 import io.faststream.AbstractBuilder;
 import io.faststream.codegen.core.Codegen;
 import io.faststream.codegen.core.CodegenConfiguration;
+import io.faststream.query.db.query.compiler.anew.QueryCompiler;
 
 import java.io.PrintWriter;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-
-import org.cakeframework.internal.db.query.compiler.anew.QueryCompiler;
 
 /**
  *

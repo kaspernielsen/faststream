@@ -16,6 +16,10 @@
 package io.faststream;
 
 import io.faststream.internal.ArrayFactoryGenerator;
+import io.faststream.query.db.nodes.stream.doublestream.AbstractDoubleStream;
+import io.faststream.query.db.nodes.stream.intstream.AbstractIntStream;
+import io.faststream.query.db.nodes.stream.longstream.AbstractLongStream;
+import io.faststream.query.db.nodes.stream.stream.AbstractStream;
 
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -24,11 +28,6 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
-
-import org.cakeframework.internal.db.nodes.stream.doublestream.AbstractDoubleStream;
-import org.cakeframework.internal.db.nodes.stream.intstream.AbstractIntStream;
-import org.cakeframework.internal.db.nodes.stream.longstream.AbstractLongStream;
-import org.cakeframework.internal.db.nodes.stream.stream.AbstractStream;
 
 /**
  *

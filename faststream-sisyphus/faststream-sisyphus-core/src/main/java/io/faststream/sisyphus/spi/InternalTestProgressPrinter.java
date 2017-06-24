@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * A simple class that print the test progress.
- * 
+ *
  * @author Kasper Nielsen
  */
 class InternalTestProgressPrinter extends Thread {
@@ -99,7 +99,6 @@ class InternalTestProgressPrinter extends Thread {
         super.start();
     }
 
-    /** Copied from org.cakeframework.internal.util */
     static class InternalDurationFormatter implements Serializable {
 
         /** serialVersionUID. */
@@ -143,7 +142,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time parameter.
-         * 
+         *
          * @param nano
          *            the nanoseconds part
          * @return the formatted string
@@ -154,12 +153,12 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time parameters.
-         * 
+         *
          * @param micros
          *            the microseconds part
          * @param nano
          *            the nanoseconds part
-         * 
+         *
          * @return the formatted string
          */
         protected String doFormat(int micros, int nano) {
@@ -168,14 +167,14 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time parameters.
-         * 
+         *
          * @param millies
          *            the milliseconds part
          * @param micros
          *            the microseconds part
          * @param nano
          *            the nanoseconds part
-         * 
+         *
          * @return the formatted string
          */
         protected String doFormat(int millies, int micros, int nano) {
@@ -184,7 +183,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time parameters.
-         * 
+         *
          * @param seconds
          *            the seconds part
          * @param millies
@@ -193,7 +192,7 @@ class InternalTestProgressPrinter extends Thread {
          *            the microseconds part
          * @param nano
          *            the nanoseconds part
-         * 
+         *
          * @return the formatted string
          */
         protected String doFormat(int seconds, int millies, int micros, int nano) {
@@ -202,7 +201,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time parameters.
-         * 
+         *
          * @param minutes
          *            the minutes part
          * @param seconds
@@ -213,7 +212,7 @@ class InternalTestProgressPrinter extends Thread {
          *            the microseconds part
          * @param nano
          *            the nanoseconds part
-         * 
+         *
          * @return the formatted string
          */
         protected String doFormat(int minutes, int seconds, int millies, int micros, int nano) {
@@ -222,7 +221,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time parameters.
-         * 
+         *
          * @param hours
          *            the hours part
          * @param minutes
@@ -235,7 +234,7 @@ class InternalTestProgressPrinter extends Thread {
          *            the microseconds part
          * @param nano
          *            the nanoseconds part
-         * 
+         *
          * @return the formatted string
          */
         protected String doFormat(int hours, int minutes, int seconds, int millies, int micros, int nano) {
@@ -244,7 +243,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time parameters.
-         * 
+         *
          * @param days
          *            the days part
          * @param hours
@@ -259,7 +258,7 @@ class InternalTestProgressPrinter extends Thread {
          *            the microseconds part
          * @param nano
          *            the nanoseconds part
-         * 
+         *
          * @return the formatted string
          */
         protected String doFormat(int days, int hours, int minutes, int seconds, int millies, int micros, int nano) {
@@ -268,7 +267,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time to produce a string.
-         * 
+         *
          * @param time
          *            the amount of time
          * @param unit
@@ -281,7 +280,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time to produce a string.
-         * 
+         *
          * @param millies
          *            the amount of time in milliseconds
          * @return the formatting string
@@ -292,7 +291,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified time to produce a string.
-         * 
+         *
          * @param nanos
          *            the amount of time in nanos
          * @return the formatting string
@@ -319,7 +318,7 @@ class InternalTestProgressPrinter extends Thread {
         /**
          * Returns name of the specified time unit. For example getName(1, TimeUnit.seconds) will return 'second' while
          * invoking getName(10, TimeUnit.seconds) will return 'seconds'.
-         * 
+         *
          * @param value
          *            the amount of time
          * @param unit
@@ -333,7 +332,7 @@ class InternalTestProgressPrinter extends Thread {
         /**
          * Returns the symbol of the specified time unit. The default implementation returns the standard SI symbol for
          * the specified time unit.
-         * 
+         *
          * @param unit
          *            the time unit for which the symbol should be returned
          * @return the symbol of the specified time unit
@@ -344,7 +343,7 @@ class InternalTestProgressPrinter extends Thread {
 
         /**
          * Formats the specified values into a <tt>integer-part{decimal separator}decimal-part</tt> format.
-         * 
+         *
          * @param value
          *            the integer part
          * @param decimal

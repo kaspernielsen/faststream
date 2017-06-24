@@ -20,9 +20,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.cakeframework.internal.db.query.node.defaults.AllQueryOperations;
-import org.cakeframework.test.sisyphus.javautil.CollectionRandomTestBuilder;
 import org.junit.Ignore;
+
+import io.faststream.query.db.query.node.defaults.AllQueryOperations;
+import io.faststream.sisyphus.javautil.CollectionRandomTestBuilder;
 
 /**
  *

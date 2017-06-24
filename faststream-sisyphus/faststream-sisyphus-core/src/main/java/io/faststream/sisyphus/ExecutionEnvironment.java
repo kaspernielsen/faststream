@@ -19,7 +19,7 @@ import static java.util.Objects.requireNonNull;
 
 /**
  * The environment tests are running in.
- * 
+ *
  * @author Kasper Nielsen
  */
 public enum ExecutionEnvironment {
@@ -56,7 +56,7 @@ public enum ExecutionEnvironment {
         RUNNING_IN_ECLIPSE = st[st.length - 1].toString().contains("org.eclipse");
 
         // Explicitly set on the command line.
-        String property = System.getProperty("cakex.environment");
+        String property = System.getProperty("faststream.environment");
         if (property == null) {
             CURRENT = runningInMaven ? COMMAND_PROMT : INSIDE_AN_IDE;
         } else {
@@ -76,7 +76,7 @@ public enum ExecutionEnvironment {
 
     /**
      * Sets the current environment. This is primarily useful for sometimes reproducing tests in another environment.
-     * 
+     *
      * @param environment
      *            the execution environment
      */

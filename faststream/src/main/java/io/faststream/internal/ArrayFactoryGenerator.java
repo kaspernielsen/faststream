@@ -20,14 +20,13 @@ import io.faststream.codegen.core.Codegen;
 import io.faststream.codegen.core.CodegenClass;
 import io.faststream.codegen.core.CodegenMethod;
 import io.faststream.codegen.model.util.Identifier;
+import io.faststream.query.db.query.compiler.anew.CompiledCollectionConfiguration;
+import io.faststream.query.db.query.compiler.anew.QueryCompiler;
+import io.faststream.query.db.query.compiler.datasource.ArrayOrListComposite;
+import io.faststream.query.db.query.node.TerminalQueryOperationNode;
+import io.faststream.query.db.query.node.TerminalQueryOperationNodeProcessor;
 
 import java.util.Objects;
-
-import org.cakeframework.internal.db.query.compiler.anew.CompiledCollectionConfiguration;
-import org.cakeframework.internal.db.query.compiler.anew.QueryCompiler;
-import org.cakeframework.internal.db.query.compiler.datasource.ArrayOrListComposite;
-import org.cakeframework.internal.db.query.node.TerminalQueryOperationNode;
-import org.cakeframework.internal.db.query.node.TerminalQueryOperationNodeProcessor;
 
 /**
  *

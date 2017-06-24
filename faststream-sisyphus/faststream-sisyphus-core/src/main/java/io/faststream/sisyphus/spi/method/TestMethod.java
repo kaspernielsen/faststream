@@ -27,7 +27,7 @@ import io.faststream.sisyphus.spi.TestCase;
 
 /**
  * A method of some object that is under test.
- * 
+ *
  * @author Kasper Nielsen
  */
 public final class TestMethod implements Comparable<TestMethod> {
@@ -57,7 +57,7 @@ public final class TestMethod implements Comparable<TestMethod> {
 
     /**
      * Returns the default weight of the method
-     * 
+     *
      * @return the default weight of the method
      */
     public double getDefaultWeight() {
@@ -66,7 +66,7 @@ public final class TestMethod implements Comparable<TestMethod> {
 
     /**
      * Returns the actual method.
-     * 
+     *
      * @return the actual method
      */
     public Method getMethod() {
@@ -128,7 +128,7 @@ public final class TestMethod implements Comparable<TestMethod> {
         }
         StringBuilder sb = new StringBuilder();
         String pname = method.getDeclaringClass().getPackage().getName();
-        pname = pname.replace("org.cakeframework.test.random.", "");
+        pname = pname.replace("io.faststream.test.random.", "");
         sb.append(pname).append(".").append(method.getDeclaringClass().getSimpleName() + "." + method.getName());
         return cache = sb.toString();
     }

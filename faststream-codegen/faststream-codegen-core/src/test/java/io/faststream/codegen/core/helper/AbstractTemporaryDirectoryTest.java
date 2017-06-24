@@ -29,7 +29,7 @@ import org.junit.runner.Description;
 
 /**
  * An abstract test that creates temporary directories for test outputs.
- * 
+ *
  * @author Kasper Nielsen
  */
 public class AbstractTemporaryDirectoryTest {
@@ -55,7 +55,7 @@ public class AbstractTemporaryDirectoryTest {
 
     @Before
     public final void setupDirectory() throws Exception {
-        testroot = Files.createTempDirectory("cake-" + getTestName() + "-test");
+        testroot = Files.createTempDirectory("faststream-" + getTestName() + "-test");
         // testroot = rootPath.resolve(getTestName());
         Files.createDirectories(testroot);
     }

@@ -1,18 +1,17 @@
 package flatmapIteratorImprove;
 
-import io.faststream.ArrayListFactory;
-import io.faststream.internal.AbstractList;
-import io.faststream.internal.GeneratorUtil;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.stream.Stream;
 
-import org.cakeframework.internal.db.nodes.stream.stream.AbstractStream;
-import org.cakeframework.internal.db.query.compiler.anew.QueryCompiler;
-import org.cakeframework.internal.db.query.node.TerminalQueryOperationNode;
-import org.cakeframework.internal.db.query.node.TerminalQueryOperationNodeProcessor;
+import io.faststream.ArrayListFactory;
+import io.faststream.internal.AbstractList;
+import io.faststream.internal.GeneratorUtil;
+import io.faststream.query.db.nodes.stream.stream.AbstractStream;
+import io.faststream.query.db.query.compiler.anew.QueryCompiler;
+import io.faststream.query.db.query.node.TerminalQueryOperationNode;
+import io.faststream.query.db.query.node.TerminalQueryOperationNodeProcessor;
 
 public class ArrayList extends AbstractList implements List, RandomAccess {
 

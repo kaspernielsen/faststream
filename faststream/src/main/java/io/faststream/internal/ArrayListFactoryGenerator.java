@@ -21,14 +21,13 @@ import io.faststream.codegen.core.Codegen;
 import io.faststream.codegen.core.CodegenClass;
 import io.faststream.codegen.core.CodegenMethod;
 import io.faststream.codegen.model.util.Identifier;
+import io.faststream.query.db.nodes.stream.stream.AbstractStream;
+import io.faststream.query.db.query.compiler.anew.CompiledCollectionConfiguration;
+import io.faststream.query.db.query.compiler.datasource.ArrayOrListComposite;
 
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.stream.Stream;
-
-import org.cakeframework.internal.db.nodes.stream.stream.AbstractStream;
-import org.cakeframework.internal.db.query.compiler.anew.CompiledCollectionConfiguration;
-import org.cakeframework.internal.db.query.compiler.datasource.ArrayOrListComposite;
 
 /**
  *

@@ -25,12 +25,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Many Cake data structures uses dynamic code generation to generate highly efficient code.
- * 
+ * Many data structures uses dynamic code generation to generate highly efficient code.
+ *
  * This class can be used to provide greater control about how these classes are loaded into the JVM. As well as provide
  * support for outputting the generate code. For example, for use in debugging. Or just for inspecting the generated
  * code.
- * 
+ *
  * @author Kasper Nielsen
  */
 // Move to x properties for now
@@ -53,11 +53,11 @@ public class CodegenConfiguration {
      * stream before it is compiled.
      * <p>
      * This can, for example, be used to output all generated source code to system.out:
-     * 
+     *
      * <pre>
      * codegenConfiguration.setCompilationStream(System.out);
      * </pre>
-     * 
+     *
      * @param stream
      *            the print stream
      * @return this configuration
@@ -71,7 +71,7 @@ public class CodegenConfiguration {
     /**
      * Equivalent to {@link #addCodeWriter(PrintStream)} except that this method takes a print writer instead of a print
      * stream.
-     * 
+     *
      * @param writer
      *            the print writer
      * @return this configuration
@@ -86,7 +86,7 @@ public class CodegenConfiguration {
     /**
      * Returns any class loader parent set by {@link #setClassLoaderParent(ClassLoader)}. Or {@code null} if no class
      * loader parent has been set.
-     * 
+     *
      * @return a class loader parent if one has been set, other {@code null}
      * @see #setClassLoaderParent(ClassLoader)
      */
@@ -96,7 +96,7 @@ public class CodegenConfiguration {
 
     /**
      * Returns a list of writers set by {@link #addCodeWriter(PrintStream)} or {@link #addCodeWriter(PrintWriter)}.
-     * 
+     *
      * @return a list of writers
      */
     public final List<PrintWriter> getCodeWriters() {
@@ -106,7 +106,7 @@ public class CodegenConfiguration {
     /**
      * The default package as set by {@link #setDefaultPackage(Package)} or {@link #setDefaultPackage(String)}. Or
      * {@code null} if no default package has been set.
-     * 
+     *
      * @return the default package
      */
     public final String getDefaultPackage() {
@@ -115,7 +115,7 @@ public class CodegenConfiguration {
 
     /**
      * Returns any source path set by {@link #setSourcePath(String)} or {@link #setSourcePath(Path)}.
-     * 
+     *
      * @return any source path that been set
      */
     public final Path getSourcePath() {
@@ -126,9 +126,8 @@ public class CodegenConfiguration {
      * Sets the class loader that should be used as a parent for generated classes. If no class loader parent is defined
      * by this method. The code using dynamic code generation will use the class loader available from
      * <code>Thread.currentThread().getContextClassLoader()</code> as a parent. This class loader is acquired when the
-     * container is constructed via its constructor, {@link org.cakeframework.container.ContainerConfiguration#create()}
-     * or a similar method.
-     * 
+     * container is constructed via its constructor or a similar method.
+     *
      * @param parentClassLoader
      *            the class loader parent
      * @return this configuration
@@ -141,13 +140,13 @@ public class CodegenConfiguration {
 
     /**
      * Sets the package that all generated classes are located in.
-     * 
+     *
      * Equivalent to calling:
-     * 
+     *
      * <pre>
      * setPackage(p.getName());
      * </pre>
-     * 
+     *
      * @param defaultPackage
      *            the package
      * @return this configuration
@@ -158,7 +157,7 @@ public class CodegenConfiguration {
 
     /**
      * Sets the package that all generated classes are located in.
-     * 
+     *
      * @param defaultPackage
      *            the package
      * @return this configuration
@@ -177,7 +176,7 @@ public class CodegenConfiguration {
      * <p>
      * The placement of files are relative to the specified source path. Matching any package naming scheme set by
      * {@link #setDefaultPackage(String)}.
-     * 
+     *
      * @param directory
      *            the output directory
      * @return this configuration
@@ -191,11 +190,11 @@ public class CodegenConfiguration {
      * Sets a source path where all generated source code is written to.
      * <p>
      * Equivalent to calling:
-     * 
+     *
      * <pre>
      * setSourcePath(Paths.get(directory));
      * </pre>
-     * 
+     *
      * @param directory
      *            the root
      * @return this configuration

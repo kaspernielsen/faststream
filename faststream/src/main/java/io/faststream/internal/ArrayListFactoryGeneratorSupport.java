@@ -19,12 +19,11 @@ import static java.util.Objects.requireNonNull;
 import io.faststream.ArrayListFactory;
 import io.faststream.codegen.core.CodegenClass;
 import io.faststream.codegen.core.CodegenMethod;
+import io.faststream.query.db.query.compiler.anew.QueryCompiler;
+import io.faststream.query.db.query.node.TerminalQueryOperationNode;
+import io.faststream.query.db.query.node.TerminalQueryOperationNodeProcessor;
 
 import java.util.Collection;
-
-import org.cakeframework.internal.db.query.compiler.anew.QueryCompiler;
-import org.cakeframework.internal.db.query.node.TerminalQueryOperationNode;
-import org.cakeframework.internal.db.query.node.TerminalQueryOperationNodeProcessor;
 
 /**
  *

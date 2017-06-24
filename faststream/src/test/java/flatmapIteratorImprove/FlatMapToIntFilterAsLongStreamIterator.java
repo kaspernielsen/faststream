@@ -6,10 +6,10 @@ import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
-import org.cakeframework.internal.db.nodes.stream.intstream.SI_Filter;
-import org.cakeframework.internal.db.nodes.stream.stream.SO_FlatMapToInt;
-import org.cakeframework.internal.db.query.node.TerminalQueryOperationNode;
-import org.cakeframework.internal.db.query.runtime.StreamUtil;
+import io.faststream.query.db.nodes.stream.intstream.SI_Filter;
+import io.faststream.query.db.nodes.stream.stream.SO_FlatMapToInt;
+import io.faststream.query.db.query.node.TerminalQueryOperationNode;
+import io.faststream.query.db.query.runtime.StreamUtil;
 
 public class FlatMapToIntFilterAsLongStreamIterator extends ArrayList.Processor {
 
