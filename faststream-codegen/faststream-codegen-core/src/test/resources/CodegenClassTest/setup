@@ -1,0 +1,1 @@
+This class only exists so that ClassLoader.getResource() can find the correct folder

@@ -1,0 +1,8 @@
+io.faststream.sisyphus.javautil.concurrentmap
+io.faststream.sisyphus.javautil.collection
+io.faststream.sisyphus.javautil.iterable
+io.faststream.sisyphus.javautil.map
+io.faststream.sisyphus.javautil.stream.object
+io.faststream.sisyphus.javautil.stream.ints
+io.faststream.sisyphus.javautil.stream.doubles
+io.faststream.sisyphus.javautil.stream.longs
