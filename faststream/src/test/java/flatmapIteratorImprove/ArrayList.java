@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.RandomAccess;
 import java.util.stream.Stream;
 
-import io.faststream.ArrayListFactory;
+import io.faststream.ListFactory;
 import io.faststream.internal.AbstractList;
 import io.faststream.internal.GeneratorUtil;
 import io.faststream.query.db.nodes.stream.stream.AbstractStream;
@@ -83,7 +83,7 @@ public class ArrayList extends AbstractList implements List, RandomAccess {
         }
     }
 
-    public static class Factory implements ArrayListFactory {
+    public static class Factory implements ListFactory {
 
         static final QueryCompiler P = GeneratorUtil.getIt();
 

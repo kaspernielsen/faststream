@@ -23,8 +23,7 @@ import java.util.List;
  *
  * @author Kasper Nielsen
  */
-// Rename to ListFactory
-public interface ArrayListFactory<T> {
+public interface ListFactory<T> {
 
     /**
      * Constructs an empty list with an initial capacity of ten.

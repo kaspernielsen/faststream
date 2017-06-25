@@ -16,7 +16,7 @@
 package io.faststream.internal;
 
 import static java.util.Objects.requireNonNull;
-import io.faststream.ArrayListFactory;
+import io.faststream.ListFactory;
 import io.faststream.codegen.core.CodegenClass;
 import io.faststream.codegen.core.CodegenMethod;
 import io.faststream.query.db.query.compiler.anew.QueryCompiler;
@@ -49,8 +49,8 @@ class ArrayListFactoryGeneratorSupport {
         c.addField("static final ", QueryCompiler.class, " P = (", QueryCompiler.class, ") ", GeneratorUtil.class,
                 ".getIt();");
 
-        c.addImport(ArrayListFactory.class);
-        c.setDefinition("public static class Factory implements ", ArrayListFactory.class);
+        c.addImport(ListFactory.class);
+        c.setDefinition("public static class Factory implements ", ListFactory.class);
         c.addMethod("public List newArrayList()").add("return new ArrayList();");
         c.addMethod("public List newArrayList(int size)").add("return new ArrayList(size);");
         c.addMethod("public List newArrayList(Collection c)").add("return new ArrayList(c);");

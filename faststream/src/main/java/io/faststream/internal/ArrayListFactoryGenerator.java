@@ -15,8 +15,8 @@
  */
 package io.faststream.internal;
 
-import io.faststream.ArrayListFactory;
-import io.faststream.ArrayListFactoryBuilder;
+import io.faststream.ListFactory;
+import io.faststream.ListFactoryBuilder;
 import io.faststream.codegen.core.Codegen;
 import io.faststream.codegen.core.CodegenClass;
 import io.faststream.codegen.core.CodegenMethod;
@@ -104,7 +104,7 @@ public class ArrayListFactoryGenerator {
     }
 
     @SuppressWarnings({ "unchecked" })
-    public static <T> ArrayListFactory<T> build(ArrayListFactoryBuilder builder) {
+    public static <T> ListFactory<T> build(ListFactoryBuilder builder) {
         ArrayListFactoryGenerator b = new ArrayListFactoryGenerator();
         b.build();
 
@@ -121,7 +121,7 @@ public class ArrayListFactoryGenerator {
         vc.addParameter(size);
         vc.setMain(ArrayOrListComposite.create(Object[].class, id).withUpperBounds(size));
 
-        Class<?> f = GeneratorUtil.getDeclaredClass(cl, cc -> ArrayListFactory.class.isAssignableFrom(cc));
-        return (ArrayListFactory<T>) GeneratorUtil.instantiate(f, vc.create());
+        Class<?> f = GeneratorUtil.getDeclaredClass(cl, cc -> ListFactory.class.isAssignableFrom(cc));
+        return (ListFactory<T>) GeneratorUtil.instantiate(f, vc.create());
     }
 }

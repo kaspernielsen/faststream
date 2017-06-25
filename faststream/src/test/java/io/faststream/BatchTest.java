@@ -46,7 +46,7 @@ public class BatchTest implements AllQueryOperations {
         // ArrayListFactory<Integer> f = new
         // ArrayListFactoryBuilder().setSourcePath("../GeneratedClasses/src/main/java")
         // .setSourcePath("/Volumes/RAM Disk/src").build();
-        ArrayListFactory<Integer> f = new ArrayListFactoryBuilder().build();
+        ListFactory<Integer> f = new ListFactoryBuilder().build();
 
         CollectionRandomTestBuilder<Integer> builder = new CollectionRandomTestBuilder<Integer>() {
             @Override

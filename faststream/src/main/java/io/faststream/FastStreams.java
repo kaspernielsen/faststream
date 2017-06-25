@@ -40,7 +40,7 @@ public class FastStreams {
      *
      * @return a new empty array list with an initial capacity of ten
      * @see ArrayList#ArrayList()
-     * @see ArrayListFactoryBuilder
+     * @see ListFactoryBuilder
      */
     public static <T> List<T> newArrayList() {
         return (List<T>) ArrayListHolder.INSTANCE.newArrayList();
@@ -56,7 +56,7 @@ public class FastStreams {
      * @throws NullPointerException
      *             if the specified collection is null
      * @see ArrayList#ArrayList(Collection)
-     * @see ArrayListFactoryBuilder
+     * @see ListFactoryBuilder
      */
     @SuppressWarnings("rawtypes")
     public static <T> List<T> newArrayList(Collection<? super T> c) {
@@ -73,7 +73,7 @@ public class FastStreams {
      *             if the specified initial capacity is negative
      * @return a new array list with the specified initial capacity
      * @see ArrayList#ArrayList(int)
-     * @see ArrayListFactoryBuilder
+     * @see ListFactoryBuilder
      */
     public static <T> List<T> newArrayList(int initialSize) {
         return (List<T>) ArrayListHolder.INSTANCE.newArrayList(initialSize);
@@ -171,6 +171,6 @@ public class FastStreams {
     static class ArrayListHolder {
 
         /** Default factory of array lists. */
-        static final ArrayListFactory<Object> INSTANCE = new ArrayListFactoryBuilder().setClassLoaderParent(FastStreams.class.getClassLoader()).build();
+        static final ListFactory<Object> INSTANCE = new ListFactoryBuilder().setClassLoaderParent(FastStreams.class.getClassLoader()).build();
     }
 }

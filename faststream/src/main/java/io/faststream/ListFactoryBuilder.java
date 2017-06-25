@@ -25,9 +25,9 @@ import java.nio.file.Path;
  *
  * @author Kasper Nielsen
  */
-public final class ArrayListFactoryBuilder extends AbstractBuilder {
+public final class ListFactoryBuilder extends AbstractBuilder {
 
-    public <T> ArrayListFactory<T> build() {
+    public <T> ListFactory<T> build() {
         return ArrayListFactoryGenerator.build(this);
     }
 
@@ -36,43 +36,43 @@ public final class ArrayListFactoryBuilder extends AbstractBuilder {
      * 
      * @return
      */
-    public ArrayListFactoryBuilder disableModCount() {
+    public ListFactoryBuilder disableModCount() {
         return this;
     }
 
     /** {@inheritDoc} */
     @Override
-    public ArrayListFactoryBuilder addCodeWriter(PrintStream stream) {
-        return (ArrayListFactoryBuilder) super.addCodeWriter(stream);
+    public ListFactoryBuilder addCodeWriter(PrintStream stream) {
+        return (ListFactoryBuilder) super.addCodeWriter(stream);
     }
 
     /** {@inheritDoc} */
     @Override
-    public ArrayListFactoryBuilder addCodeWriter(PrintWriter writer) {
-        return (ArrayListFactoryBuilder) super.addCodeWriter(writer);
+    public ListFactoryBuilder addCodeWriter(PrintWriter writer) {
+        return (ListFactoryBuilder) super.addCodeWriter(writer);
     }
 
     /** {@inheritDoc} */
     @Override
-    public ArrayListFactoryBuilder setClassLoaderParent(ClassLoader parentClassLoader) {
-        return (ArrayListFactoryBuilder) super.setClassLoaderParent(parentClassLoader);
+    public ListFactoryBuilder setClassLoaderParent(ClassLoader parentClassLoader) {
+        return (ListFactoryBuilder) super.setClassLoaderParent(parentClassLoader);
     }
 
     /** {@inheritDoc} */
     @Override
-    public ArrayListFactoryBuilder setPackage(String defaultPackage) {
-        return (ArrayListFactoryBuilder) super.setPackage(defaultPackage);
+    public ListFactoryBuilder setPackage(String defaultPackage) {
+        return (ListFactoryBuilder) super.setPackage(defaultPackage);
     }
 
     /** {@inheritDoc} */
     @Override
-    public ArrayListFactoryBuilder setSourcePath(Path directory) {
-        return (ArrayListFactoryBuilder) super.setSourcePath(directory);
+    public ListFactoryBuilder setSourcePath(Path directory) {
+        return (ListFactoryBuilder) super.setSourcePath(directory);
     }
 
     /** {@inheritDoc} */
     @Override
-    public ArrayListFactoryBuilder setSourcePath(String directory) {
-        return (ArrayListFactoryBuilder) super.setSourcePath(directory);
+    public ListFactoryBuilder setSourcePath(String directory) {
+        return (ListFactoryBuilder) super.setSourcePath(directory);
     }
 }
