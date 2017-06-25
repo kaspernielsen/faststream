@@ -34,7 +34,6 @@
   <modules>
     <module>faststream-query-api</module>
     <module>faststream-query-compiler</module>
-    <module>faststream-query-optimizer</module>
     <module>faststream-query-nodes</module>
     <module>faststream-query-sisyphus</module>
     <module>faststream-query-interpreter</module>

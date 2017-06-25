@@ -54,6 +54,7 @@
   </build>
   
   <modules>
+    <module>faststream</module>
     <module>faststream-sisyphus</module>
     <module>faststream-query</module>
     <module>faststream-codegen</module>

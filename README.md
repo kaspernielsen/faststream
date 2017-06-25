@@ -15,7 +15,7 @@ Prerequisites: Java 1.8 + Maven 3
 > cd faststream
 > mvn install
 ~~~~
-A single jar file will be built as faststream/target/faststream-xxxx.jar
+A single jar file will be built as faststream/target/faststream-xxxx.jar that can be included on the classpath
 
 
 Usage

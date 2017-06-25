@@ -19,17 +19,16 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
  *
  * @author Kasper Nielsen
  */
+
 public class FastStreamTest {
 
     @Test
-    @Ignore
     public void testArray() {
         assertEquals(4, FastStreams.of(new Object[] { 1, 2, 3, 4 }).count());
     }
@@ -40,7 +39,6 @@ public class FastStreamTest {
     }
 
     @Test
-    @Ignore
     public void testIt() {
         assertEquals(4, FastStreams.newArrayList(Arrays.asList(1, 2, 3, 4)).stream().count());
     }

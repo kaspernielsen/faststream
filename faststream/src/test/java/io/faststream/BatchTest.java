@@ -15,15 +15,11 @@
  */
 package io.faststream;
 
-import java.util.Collection;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Ignore;
-
 import io.faststream.query.db.query.node.defaults.AllQueryOperations;
-import io.faststream.sisyphus.javautil.CollectionRandomTestBuilder;
 
 /**
  *
@@ -41,25 +37,25 @@ public class BatchTest implements AllQueryOperations {
     }
 
     // @Test
-    @Ignore
-    public void test() {
-        // ArrayListFactory<Integer> f = new
-        // ArrayListFactoryBuilder().setSourcePath("../GeneratedClasses/src/main/java")
-        // .setSourcePath("/Volumes/RAM Disk/src").build();
-        ListFactory<Integer> f = new ListFactoryBuilder().build();
-
-        CollectionRandomTestBuilder<Integer> builder = new CollectionRandomTestBuilder<Integer>() {
-            @Override
-            protected Collection<Integer> createActual(Collection<Integer> bootstrap) {
-                return f.newArrayList(bootstrap);
-            }
-
-        };
-
-        // Seed = 27238910071408
-        // InitialSeed = 123456789
-        builder.setExecutor(1);
-        builder.setInitialSeed(System.currentTimeMillis());
-        builder.start(1000000);
-    }
+    // @Ignore
+    // public void test() {
+    // // ArrayListFactory<Integer> f = new
+    // // ArrayListFactoryBuilder().setSourcePath("../GeneratedClasses/src/main/java")
+    // // .setSourcePath("/Volumes/RAM Disk/src").build();
+    // ListFactory<Integer> f = new ListFactoryBuilder().build();
+    //
+    // CollectionRandomTestBuilder<Integer> builder = new CollectionRandomTestBuilder<Integer>() {
+    // @Override
+    // protected Collection<Integer> createActual(Collection<Integer> bootstrap) {
+    // return f.newArrayList(bootstrap);
+    // }
+    //
+    // };
+    //
+    // // Seed = 27238910071408
+    // // InitialSeed = 123456789
+    // builder.setExecutor(1);
+    // builder.setInitialSeed(System.currentTimeMillis());
+    // builder.start(1000000);
+    // }
 }
