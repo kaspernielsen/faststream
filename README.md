@@ -1,4 +1,4 @@
-FastStream
+# FastStream
 
 This project represents a proof of concept of compiling functional lambda abstractions into byte code.
 That easily beats the standard implementation in java.util.stream.
@@ -10,9 +10,11 @@ And can, with a little work, be used as the basis of a query mechanism for in-me
 Build Instructions
 -------------------------------------------------------------------------------
 Prerequisites: Java 1.8 + Maven 3
+~~~~
 > git clone https://github.com/faststream/faststream
 > cd faststream
 > mvn install
+~~~~
 A single jar file will be built as faststream/target/faststream-xxxx.jar
 
 
@@ -100,9 +102,11 @@ In addition to this the runtime variance is a lot smaller do to little object al
 For example, even simple operations such as counting the number of elements in an underlying stream
 FastStreams.ofInt(1).count() vs IntStream.of(1).count(); (java.util.stream) is noticeable faster:
 
+~~~~
 Benchmark                      Mode   Samples         Mean   Mean error    Units
 f.StreamCompare.fastStream     avgt        10       15.943        0.275    ns/op
 f.StreamCompare.intStream      avgt        10       41.732        0.527    ns/op
+~~~~
 
 Tests where run using the JMH benchmarking framework (http://openjdk.java.net/projects/code-tools/jmh/)
 
@@ -117,7 +121,7 @@ Limitations
 Source Code Organization
 -------------------------------------------------------------------------------
 The repository is organized into the following components.
-
+~~~~
 faststream-sisyphus/
   faststream-sisyphus-core           A randomized scenario based testing framework
   faststream-sisyphus-javacol        TCK kit for testing Java Collection classes
@@ -133,4 +137,4 @@ faststream-query/
   faststream-query-sisyphus          A sisyphus testing module for all available query operations 
   faststream-query-compiler          The compiler creating the actual compiled query objects
   faststream-query-interpreter       An interpreter version that does not compile queries, but instead executes them sequentially
-
+~~~~
