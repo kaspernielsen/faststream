@@ -9,7 +9,7 @@ After having been dormant for a couple of years. I spend some time updating the 
 The original query API was based around 3 types of views, CollectionView, MapView and MultimapView, which are still available here
 https://github.com/kaspernielsen/faststream/tree/master/faststream-query/faststream-query-api/src/main/java/io/faststream/query/util/view
 
-Large parts of the code are in an unfinished state and given its age (>10 years) may read a bit dated.
+Large parts of the code are in a quite unfinished and prototypish state and given its age (>10 years) may read a bit dated.
 
 Build Instructions
 -------------------------------------------------------------------------------
