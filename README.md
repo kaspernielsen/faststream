@@ -1,7 +1,7 @@
 # FastStream (Updated 20 Dec 2019)
 This project represents a proof of concept of compiling functional lambda abstractions into byte code, that easily beats the standard implementation in java.util.stream performance wise.
 
-The project was originally developed around 2008-2009 inspired by Doug Leas ParallelArray framework [http://gee.cs.oswego.edu/cgi-bin/viewcvs.cgi/jsr166/src/extra166y/]. 
+The project was originally developed around 2008-2009 inspired by Doug Leas ParallelArray framework http://gee.cs.oswego.edu/cgi-bin/viewcvs.cgi/jsr166/src/extra166y/. 
 
 The basic idea was to create a framework that allowed fast programmatic querying of simple data structures such as lists and maps. This was done by creating lightweight reusable "views" around data containers of some kind.
 After having been dormant for a couple of years. I spend some time updating the code to be more aligned with java.util.stream after Java 8 came out.
@@ -9,7 +9,7 @@ After having been dormant for a couple of years. I spend some time updating the 
 The original query API was based around 3 types of views, CollectionView, MapView and MultimapView, which are still available here
 https://github.com/kaspernielsen/faststream/tree/master/faststream-query/faststream-query-api/src/main/java/io/faststream/query/util/view
 
-Large parts of the code are in an unfinished state and may read a bit dated.
+Large parts of the code are in an unfinished state and given its age (>10 years) may read a bit dated.
 
 Build Instructions
 -------------------------------------------------------------------------------
