@@ -1,11 +1,15 @@
-# FastStream
+# FastStream (Updated 20 Dec 2019)
+This project represents a proof of concept of compiling functional lambda abstractions into byte code, that easily beats the standard implementation in java.util.stream performance wise.
 
-This project represents a proof of concept of compiling functional lambda abstractions into byte code.
-That easily beats the standard implementation in java.util.stream.
+The project was originally developed around 2008-2009 inspired by Doug Leas ParallelArray framework [http://gee.cs.oswego.edu/cgi-bin/viewcvs.cgi/jsr166/src/extra166y/]. 
 
-The implementation is a generic query framework across common data structures such as array lists and hash tables.
-And can, with a little work, be used as the basis of a query mechanism for in-memory databases of any form.  
+The basic idea was to create a framework that allowed fast programmatic querying of simple data structures such as lists and maps. This was done by creating lightweight reusable "views" around data containers of some kind.
+After having been dormant for a couple of years. I spend some time updating the code to be more aligned with java.util.stream after Java 8 came out.
 
+The original query API was based around 3 types of views, CollectionView, MapView and MultimapView, which are still available here
+https://github.com/kaspernielsen/faststream/tree/master/faststream-query/faststream-query-api/src/main/java/io/faststream/query/util/view
+
+Large parts of the code are in an unfinished state and may read a bit dated.
 
 Build Instructions
 -------------------------------------------------------------------------------
@@ -13,7 +17,7 @@ Prerequisites: Java 1.8 + Maven 3
 ~~~~
 > git clone https://github.com/faststream/faststream
 > cd faststream
-> mvn install
+> mvn -Dmaven.test.skip=true clean install 
 ~~~~
 A single jar file will be built as faststream/target/faststream-xxxx.jar that can be included on the classpath
 
@@ -41,7 +45,7 @@ import io.faststream.*;
 
 public static void main(String[] args) {
    ListFactory<Integer> f = new ListFactoryBuilder().setPackage("com.acme").setClassLoaderParent(xxxxx).build();
-   List<T> l = newArrayList();
+   List<Integer> l = f.newArrayList();
    //Use it as an ordinary list    
 }
 ~~~~
@@ -49,15 +53,12 @@ public static void main(String[] args) {
 
 High level implementation overview
 -------------------------------------------------------------------------------
-1) The user uses standard Java syntax for querying the data structure such as list.stream().filter(e -> e % 2 == 0).mapToDouble(e -> e).sorted().sum())
-2) An intermediate representation of the query using operations such as Count, Distinct, Filter, Randomize, GroupBy, Sort, Map, Sum is created
+1) The user uses standard Java syntax for querying the data structure such as list.stream().filter(e -> e % 2 == 0).mapToDouble(e -> e).sorted().sum()).
+2) An intermediate representation of the query using operations such as Count, Distinct, Filter, Randomize, GroupBy, Sort, Map, Sum is created. Each operation is represented by a node, and a query is represented by a directed graph of some kind. For example, for the above query would be represented as a linked list with 4 nodes: Sum->Sorted->MapToDouble->Filter 
 3) The query is optimized, for example, by removing operations that do not effect the outcome of the query
-4) A query plan is created using the properties of the underlying data structure, for example Fisher–Yates shuffling can be used for array based structures.
-   While it the shuffling method does not work to create truly random selections for link based hash table.
-5) Java source code representing the query is generated and compiled internally using a modified Janino compiler. FastStreams uses Java representation as 
-   an intermediate step instead of compiling directly to bytecode to ease the debugging process. In the future this could be replaced with direct compilation 
-   based on an internal AST.
-6) The compiled query is cached in a very efficient caching structure to allow for reuse if the same query is performed again.
+4) A query plan is created using the properties of the underlying data structure. For example, if the underlying data structure is an array you can take some shortcuts that are not available if it is a linked list.
+5) Java source code representing the query is generated and compiled internally using a modified Janino compiler. FastStreams uses Java representation as an intermediate step instead of compiling directly to bytecode to ease the debugging process. In the future this could be replaced with direct compilation  based on an internal AST.
+6) The compiled query is cached to allow for reuse if the same query is performed again.
 7) The query is executed and the result is returned to user.
 
 The simple query outlined in step 1 above is represented internally with this query object
@@ -90,16 +91,14 @@ public class FilterMapToDoubleSortedSum extends Processor {
 
 Benchmarks
 -------------------------------------------------------------------------------
-The implementation is very efficient and most queries allocates less than a handful of objects. 
-
 We have used the benchmarks outlined in Class of the Lambdas (https://arxiv.org/abs/1406.6631).
 Which is simple framework for testing lambda abstraction employed in stream processing across 
 high-level languages that run on a virtual machine (C#, F# Java and Scala) and runtime platforms 
 (JVM on Linux and Windows, .NET CLR for Windows, Mono for Linux).
 
 We generally see a running time between 2 and 10 times faster than java.util.stream.
-In addition to this the runtime variance is a lot smaller do to little object allocation.
-For example, even simple operations such as counting the number of elements in an underlying stream
+In addition to this, the runtime variance is a lot smaller do to reduced object allocation.
+Even simple operations such as counting the number of elements in an underlying stream
 FastStreams.ofInt(1).count() vs IntStream.of(1).count(); (java.util.stream) is noticeable faster:
 
 ~~~~
