@@ -23,6 +23,7 @@ import static org.junit.Assume.assumeTrue;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.function.IntFunction;
 
 import io.faststream.sisyphus.annotations.FailWith;
 import io.faststream.sisyphus.annotations.LifecycleTestMethod;
@@ -82,7 +83,7 @@ public class ToArrayArray<E> extends AbstractRandomCollectionTestCase<E> {
 
     @FailWith(NullPointerException.class)
     public void toArrayNull() {
-        actual().toArray(null);
+        actual().toArray((IntFunction) null);
     }
 
     @FailWith(ArrayStoreException.class)
